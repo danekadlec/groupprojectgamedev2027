@@ -2,7 +2,7 @@
 
 Working title: Primitive Hunters
 
-Team members: Dane, Ethan, Joyce
+Team members: Dane Kadlec, Ethan Bui, Joyce Xie
 
 Who might play: Gen Z
 
