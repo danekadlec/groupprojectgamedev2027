@@ -1,33 +1,41 @@
 // Joyce Xie
 class Dinosaur {
 
-// member variables
+  // Member variables
   float x, y;
+  float w, h; 
   float speed;
   int health;
   boolean isDead;
 
-// constructor
-  Enemy(float x, float y) {
+  // Constructor
+  Dinosaur(float x, float y) {
     this.x = x;
     this.y = y;
+    this.w = 50; 
+    this.h = 50; 
     this.speed = 2.0;
     this.health = 100;
     this.isDead = false;
   }
 
-// Member methods
+  // Member methods
 
   void display() {
     // Drawing dinosaur
-        ellipse(x,y,w,h)
+    ellipse(x, y, w, h);
   }
 
-  void takeDamage() {
+  void takeDamage(int damage) {
     // Damage logic 
+    health -= damage;
+    if (health <= 0) {
+      isDead = true;
+    }
   }
 
   boolean checkCollision() {
     // Collision detection logic
+    return false; 
   }
-
+}
