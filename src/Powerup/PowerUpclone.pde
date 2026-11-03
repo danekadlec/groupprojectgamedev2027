@@ -1,11 +1,11 @@
 PowerUp p1;
 
 void setup() {
-  size(400,400)
-  p1 = new PowerUp();
+  size(400,400);
+  p1 = new PowerUp(200,200, 'S');
 }
 
 void draw() {
-background (100);
+background (127);
 p1.display();
 }
