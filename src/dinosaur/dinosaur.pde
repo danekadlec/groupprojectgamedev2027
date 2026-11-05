@@ -26,6 +26,15 @@ class Dinosaur {
     ellipse(x, y, w, h);
   }
 
+void move() {
+  x += speed;
+
+  if (x > width - w/2 || x < w/2) {
+    speed *= -1;
+  }
+}
+
+
   void takeDamage(int damage) {
     // Damage logic 
     health -= damage;
