@@ -21,6 +21,14 @@ class PowerUp {
     ellipse(x, y, 20, 20);
   }
 
+void move() {
+  y += speed;
+
+  if (y > height - 10 || y < 10) {
+    speed *= -1;
+  }
+}
+
   boolean checkCollision(float targetX, float targetY, float radius) {
     return false;
   }
