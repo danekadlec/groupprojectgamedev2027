@@ -1,0 +1,82 @@
+// Caveman class
+float playerX = 100;
+float playerY;          
+float CavemanWidth = 50;  
+float CavemanHeight = 60; 
+float moveSpeed = 5;
+
+float velocityY = 0;
+float gravity = 0.6;
+float jumpStrength = -12;
+boolean isGrounded = false;
+float groundY;          
+
+boolean moveLeft = false;
+boolean moveRight = false;
+
+PImage playerImg;
+
+void setup() {
+  size(800, 600);
+  
+  groundY = height - 100; 
+  playerY = groundY - CavemanHeight;
+  
+  playerImg = loadImage("caveman1.png");
+}
+
+void draw() {
+  background(300, 300, 300); 
+  
+  fill(200, 200, 200); 
+
+  
+  if (moveLeft) {
+    playerX -= moveSpeed;
+  }
+  if (moveRight) {
+    playerX += moveSpeed;
+  }
+  
+  playerX = constrain(playerX, 0, width - CavemanWidth);
+  
+  playerY += velocityY;
+  
+  if (playerY < groundY - CavemanHeight) {
+    velocityY += gravity; 
+    isGrounded = false;
+  } else {
+    playerY = groundY - CavemanHeight; 
+    velocityY = 0;
+    isGrounded = true;
+  }
+  
+  if (playerImg != null) {
+    image(playerImg, playerX, playerY, CavemanWidth, CavemanHeight);
+  } else {
+    fill(220, 20, 60); 
+    rect(playerX, playerY, CavemanWidth, CavemanHeight);
+  }
+}
+
+void keyPressed() {
+  if (key == 'a' || key == 'A' || keyCode == LEFT) {
+    moveLeft = true;
+  }
+  if (key == 'd' || key == 'D' || keyCode == RIGHT) {
+    moveRight = true;
+  }
+  
+  if ((key == 'w' || key == 'W' || keyCode == UP) && isGrounded) {
+    velocityY = jumpStrength;
+  }
+}
+
+void keyReleased() {
+  if (key == 'a' || key == 'A' || keyCode == LEFT) {
+    moveLeft = false;
+  }
+  if (key == 'd' || key == 'D' || keyCode == RIGHT) {
+    moveRight = false;
+  }
+}
