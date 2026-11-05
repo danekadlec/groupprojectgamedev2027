@@ -8,4 +8,5 @@ void setup() {
 void draw() {
 background (127);
 p1.display();
+p1.move();
 }
