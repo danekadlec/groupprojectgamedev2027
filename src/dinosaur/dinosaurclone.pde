@@ -9,4 +9,5 @@ void setup() {
 void draw() {
 background(127);
 d1.display();
+d1.move();
 }
