@@ -1,9 +1,14 @@
 // Joyce Xie
+import gifAnimation.*;
+
+Gif avgdinoGif;
 Dinosaur d1;
 
 void setup() {
- size(500,800);
- d1 = new Dinosaur(250,400);
+ size(800,800);
+ avgdinoGif = new Gif(this, "avgDino.gif");
+ avgdinoGif.loop();
+ d1 = new Dinosaur(765, 700, avgdinoGif);
 }
 
 void draw() {
