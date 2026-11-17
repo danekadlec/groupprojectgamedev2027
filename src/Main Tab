@@ -1,19 +1,22 @@
 Caveman myCaveman;
 ArrayList<Dinosaur> dinosaurs;
 ArrayList<PowerUp> powerups;
-
+PImage bg;
 void setup() {
-  size(800, 600);
+  size(800, 500);
   myCaveman = new Caveman(width / 2, height - 100);
   dinosaurs = new ArrayList<Dinosaur>();
   powerups = new ArrayList<PowerUp>();
+  bg = loadImage("mountainsbackground.jpeg");
+  bg.resize(width, height);
 }
 
 void draw() {
-  background(220);
-  myCaveman.move();
-  myCaveman.display();
-}
+background(bg);
+myCaveman.move();
+myCaveman.display();
+ }
+
 
 void keyPressed() {
   if (key == 'a' || key == 'A' || keyCode == LEFT) {
